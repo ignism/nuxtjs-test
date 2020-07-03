@@ -6,7 +6,7 @@
         nuxtjs
       </h1>
       <h2 class="subtitle">
-        My astonishing Nuxt.js project has just updated
+        My astonishing Nuxt.js project has just updated with devtools
       </h2>
       <div class="links">
         <a
