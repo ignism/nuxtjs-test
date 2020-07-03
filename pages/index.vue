@@ -2,27 +2,22 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">
-        nuxtjs
-      </h1>
-      <h2 class="subtitle">
-        My astonishing Nuxt.js project has just updated with devtools
-      </h2>
+      <h1 class="title">nuxtjs</h1>
+      <h2 class="subtitle">My astonishing Nuxt.js project running from localhost</h2>
+      <pre style="text-align: left">
+        {{ result }}
+      </pre>
       <div class="links">
         <a
+          class="button--green"
           href="https://nuxtjs.org/"
           target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
+        >Documentation</a>
         <a
+          class="button--grey"
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+        >GitHub</a>
       </div>
     </div>
   </div>
@@ -30,10 +25,31 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import axios from 'axios'
+
+
+axios({
+      url: 'http://localhost:8080/api',
+      method: 'post',
+      data: {
+        query: `
+      {ping}
+      `
+      }
+    }).then((result) => {
+      console.log(result.data)
+    })
 
 export default {
   components: {
     Logo
+  },
+  data() {
+    return {
+      result: ''
+    }
+  },
+  mounted() {
   }
 }
 </script>
@@ -49,8 +65,7 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
