@@ -11,10 +11,12 @@
     "browsersync": "browser-sync start --proxy localhost:3000"
   },
   "dependencies": {
+    "@nuxtjs/apollo": "^4.0.1-rc.1",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
+    "graphql-tag": "^2.10.3",
     "nodemon": "^1.18.9"
   }
 }

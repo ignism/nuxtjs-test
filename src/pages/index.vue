@@ -3,12 +3,16 @@
     <div>
       <logo />
       <h1 class="title">nuxtjs</h1>
+      <p>
+        {{ entry }}
+      </p>
     </div>
   </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
+import gql from 'graphql-tag'
 
 export default {
   components: {
@@ -20,6 +24,16 @@ export default {
     }
   },
   mounted() {
+  },
+  apollo: {
+    entry: gql`
+      {
+        entry(section: "home") {
+          slug
+          title
+        }
+      }
+    `
   }
 }
 </script>

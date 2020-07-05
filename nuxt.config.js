@@ -38,10 +38,19 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [
+    '@nuxtjs/apollo'
+  ],
   /*
    ** Build configuration
    */
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'https://testing.grndctrl.io/public/api',
+      },
+    }
+  },
   build: {
     /*
      ** You can extend webpack config here
