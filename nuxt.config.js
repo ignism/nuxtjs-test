@@ -1,14 +1,15 @@
 export default {
   mode: 'universal',
-  /*
-   ** Headers of the page
-   */
+  srcDir: 'src/',
   vue: {
     config: {
       productionTip: false,
-      devtools: true
-    }
+      devtools: true,
+    },
   },
+  /*
+   ** Headers of the page
+   */
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -47,4 +48,4 @@ export default {
      */
     extend(config, ctx) {},
   },
-};
+}

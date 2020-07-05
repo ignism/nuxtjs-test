@@ -3,42 +3,12 @@
     <div>
       <logo />
       <h1 class="title">nuxtjs</h1>
-      <h2 class="subtitle">My astonishing Nuxt.js project running from localhost</h2>
-      <pre style="text-align: left">
-        {{ result }}
-      </pre>
-      <div class="links">
-        <a
-          class="button--green"
-          href="https://nuxtjs.org/"
-          target="_blank"
-        >Documentation</a>
-        <a
-          class="button--grey"
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-        >GitHub</a>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
-import axios from 'axios'
-
-
-axios({
-      url: 'http://localhost:8080/api',
-      method: 'post',
-      data: {
-        query: `
-      {ping}
-      `
-      }
-    }).then((result) => {
-      console.log(result.data)
-    })
 
 export default {
   components: {
